@@ -25,16 +25,15 @@ namespace CarGame_CS
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             int moveSpeed = 10;
+            Point currentLocation = pbUserCar.Location;
             // To move the car right when the user presses the right arrow key
-            if (e.KeyCode == Keys.Right) {
-                Point currentLocation = pbUserCar.Location;
+            if (e.KeyCode == Keys.Right && currentLocation.X < 509) {
                 Point updatedLocation = new Point(currentLocation.X + moveSpeed, currentLocation.Y);
                 pbUserCar.Location = updatedLocation;
             }
             // To move the car left when the user presses the left arrow key
-            if (e.KeyCode == Keys.Left)
+            if (e.KeyCode == Keys.Left && currentLocation.X > 189)
             {
-                Point currentLocation = pbUserCar.Location;
                 Point updatedLocation = new Point(currentLocation.X - moveSpeed, currentLocation.Y);
                 pbUserCar.Location = updatedLocation;
             }
