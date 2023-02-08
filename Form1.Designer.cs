@@ -29,9 +29,11 @@ namespace CarGame_CS
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pbBackground = new System.Windows.Forms.PictureBox();
             this.pbUserCar = new System.Windows.Forms.PictureBox();
+            this.gameTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbBackground)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbUserCar)).BeginInit();
             this.SuspendLayout();
@@ -56,6 +58,12 @@ namespace CarGame_CS
             this.pbUserCar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbUserCar.TabIndex = 1;
             this.pbUserCar.TabStop = false;
+            // 
+            // gameTimer
+            // 
+            this.gameTimer.Enabled = true;
+            this.gameTimer.Interval = 1;
+            this.gameTimer.Tick += new System.EventHandler(this.gameTimer_Tick);
             // 
             // Form1
             // 
@@ -82,6 +90,7 @@ namespace CarGame_CS
 
         private System.Windows.Forms.PictureBox pbBackground;
         private System.Windows.Forms.PictureBox pbUserCar;
+        private System.Windows.Forms.Timer gameTimer;
     }
 }
 
