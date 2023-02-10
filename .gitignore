@@ -1,3 +1,4 @@
 obj/Debug/
 bin/Debug/
 .vs/*/*.suo
+*.pfx
