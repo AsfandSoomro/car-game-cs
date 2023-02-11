@@ -33,7 +33,7 @@ namespace CarGame_CS
 
         // Flag
         Boolean gameOver = false;
-        Boolean gameMusicIsLoadCompleted = false;
+        Boolean gameMusicIsPlaying = false;
 
         public Form1()
         {
@@ -46,7 +46,7 @@ namespace CarGame_CS
             userCar = new Car(defaultUserCarColor, pbUserCar.Location, 0);
             this.Controls.Add(userCar);
             userCar.BringToFront();
-
+            
             // Second Image Properties
             newBackground.Size = pbBackground.Size;
             newBackground.Image = pbBackground.Image;
@@ -55,14 +55,13 @@ namespace CarGame_CS
             this.Controls.Add(newBackground);
 
             // Start the game music
-            Console.WriteLine(projectDirectory);
-            gameMusic.SoundLocation = projectDirectory + @"\music\welcome_to_bad_end_theater.wav";
+            gameMusic.Stream = Properties.Resources.ResourceManager.GetStream("welcome_to_bad_end_theater");
             gameMusic.Play();
-            gameMusicIsLoadCompleted = true;
+            gameMusicIsPlaying = true;
             musicTimer.Interval = 104 * 1000; // Length of the music 104 seconds
             musicTimer.Tick += new EventHandler(musicTimer_Tick);
             musicTimer.Start();
-
+            
             this.Refresh();
         }
 
@@ -96,7 +95,7 @@ namespace CarGame_CS
 
         private void gameTimer_Tick(object sender, EventArgs e)
         {
-            // Update the location of first image with give speed
+            // Update the location of first image with given speed
             Point updatedBackgroundLocation = new Point(pbBackground.Location.X, pbBackground.Location.Y + userSpeed);
 
             // Apply the updated locations for both moveable background images
@@ -109,8 +108,7 @@ namespace CarGame_CS
                 pbBackground.Location = new Point(0, 0);
             }
 
-            // Check if collision
-            //if (userCar.Bounds.IntersectsWith(randCar.Bounds))
+            // Check if collision by looping over each random car
             foreach (Car theCar in this.Controls.OfType<Car>())
             {
                 if (theCar == userCar) continue;
@@ -178,7 +176,7 @@ namespace CarGame_CS
             gameMusic.Play();
         }
 
-        // Finds the distance between two Locations of cars
+        // Finds the distance between two Locations (of cars)
         public static double distanceBetweenCars(Point location1, Point location2)
         {
             double distance = Math.Sqrt(
@@ -189,17 +187,16 @@ namespace CarGame_CS
 
         private void btnMusic_Click(object sender, EventArgs e)
         {
-            if (gameMusicIsLoadCompleted) { 
+            if (gameMusicIsPlaying) { 
                 gameMusic.Stop();
                 musicTimer.Stop();
-                gameMusicIsLoadCompleted = false;
+                gameMusicIsPlaying = false;
             }
             else
             {
-                gameMusic.SoundLocation = projectDirectory + @"\music\welcome_to_bad_end_theater.wav";
                 gameMusic.Play();
                 musicTimer.Start();
-                gameMusicIsLoadCompleted = true;
+                gameMusicIsPlaying = true;
             }
         }
     }

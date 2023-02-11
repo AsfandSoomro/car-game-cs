@@ -32,9 +32,7 @@ namespace CarGame_CS
         // Make the PictureBox import car picture according to provided color
         private void ApplyCarGraphics()
         {
-            this.Image = Image.FromFile(
-                String.Format(projectDirectory + "/images/car_{0}.png", this.color)
-            );
+            this.Image = (Image)Properties.Resources.ResourceManager.GetObject(String.Format("car_{0}", this.color));
             this.Size = new Size(76, 114);
             this.SizeMode = PictureBoxSizeMode.StretchImage;
             this.BackColor = Color.FromArgb(250, 69, 75, 76);
@@ -44,9 +42,7 @@ namespace CarGame_CS
         public void RotateCar(string direction, float angle)
         {
             this.Image.Dispose();
-            this.Image = Image.FromFile(
-                String.Format(projectDirectory + "/images/car_{0}_rotated_{1}.png", this.color, direction)
-            );
+            this.Image = (Image)Properties.Resources.ResourceManager.GetObject(String.Format("car_{0}_rotated_{1}", this.color, direction));
             this.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 

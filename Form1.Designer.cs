@@ -127,7 +127,7 @@ namespace CarGame_CS
             this.tsLblVersion.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.tsLblVersion.Name = "tsLblVersion";
             this.tsLblVersion.Size = new System.Drawing.Size(51, 22);
-            this.tsLblVersion.Text = "v1.0.0.0";
+            this.tsLblVersion.Text = "v1.0.0.1";
             // 
             // btnMusic
             // 
@@ -141,6 +141,7 @@ namespace CarGame_CS
             this.btnMusic.Name = "btnMusic";
             this.btnMusic.Size = new System.Drawing.Size(45, 42);
             this.btnMusic.TabIndex = 5;
+            this.btnMusic.TabStop = false;
             this.btnMusic.UseVisualStyleBackColor = false;
             this.btnMusic.Visible = false;
             this.btnMusic.Click += new System.EventHandler(this.btnMusic_Click);

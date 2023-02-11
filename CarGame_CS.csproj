@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{96D9A846-C588-4EC6-9BB2-EF9555C0B2D3}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>CarGame</RootNamespace>
+    <RootNamespace>CarGame_CS</RootNamespace>
     <AssemblyName>CarGame</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -116,7 +116,21 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="images\background_1.png" />
+    <Content Include="images\background_2.png" />
+    <Content Include="images\background_3.jpg" />
+    <Content Include="images\car_green.png" />
+    <Content Include="images\car_pink.png" />
+    <Content Include="images\car_red.png" />
+    <Content Include="images\car_yellow.png" />
+    <Content Include="images\fire.png" />
+    <Content Include="images\logos\logo_1.ico" />
+    <Content Include="images\logos\logo_2.ico" />
+    <Content Include="images\logos\logo_3.ico" />
+    <Content Include="images\music.png" />
     <Content Include="logo_2.ico" />
+    <Content Include="music\welcome_to_bad_end_theater.mp3" />
+    <Content Include="music\welcome_to_bad_end_theater.wav" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

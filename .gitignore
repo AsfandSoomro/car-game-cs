@@ -1,4 +1,4 @@
 obj/Debug/
 bin/Debug/
-.vs/*/*.suo
+.vs/*
 *.pfx
