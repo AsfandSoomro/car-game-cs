@@ -33,6 +33,7 @@ namespace CarGame_CS
 
         // Flag
         Boolean gameOver = false;
+        Boolean gameMusicIsLoadCompleted = false;
 
         public Form1()
         {
@@ -57,6 +58,7 @@ namespace CarGame_CS
             Console.WriteLine(projectDirectory);
             gameMusic.SoundLocation = projectDirectory + @"\music\welcome_to_bad_end_theater.wav";
             gameMusic.Play();
+            gameMusicIsLoadCompleted = true;
             musicTimer.Interval = 104 * 1000; // Length of the music 104 seconds
             musicTimer.Tick += new EventHandler(musicTimer_Tick);
             musicTimer.Start();
@@ -183,6 +185,22 @@ namespace CarGame_CS
                 Math.Pow(location2.X - location1.X, 2) + Math.Pow(location2.Y - location1.Y, 2)
             );
             return distance;
+        }
+
+        private void btnMusic_Click(object sender, EventArgs e)
+        {
+            if (gameMusicIsLoadCompleted) { 
+                gameMusic.Stop();
+                musicTimer.Stop();
+                gameMusicIsLoadCompleted = false;
+            }
+            else
+            {
+                gameMusic.SoundLocation = projectDirectory + @"\music\welcome_to_bad_end_theater.wav";
+                gameMusic.Play();
+                musicTimer.Start();
+                gameMusicIsLoadCompleted = true;
+            }
         }
     }
 }

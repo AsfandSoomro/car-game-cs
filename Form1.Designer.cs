@@ -39,6 +39,7 @@ namespace CarGame_CS
             this.btnRestart = new System.Windows.Forms.Button();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.tsLblVersion = new System.Windows.Forms.ToolStripLabel();
+            this.btnMusic = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbBackground)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbUserCar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbFire)).BeginInit();
@@ -128,6 +129,22 @@ namespace CarGame_CS
             this.tsLblVersion.Size = new System.Drawing.Size(51, 22);
             this.tsLblVersion.Text = "v1.0.0.0";
             // 
+            // btnMusic
+            // 
+            this.btnMusic.BackColor = System.Drawing.Color.YellowGreen;
+            this.btnMusic.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMusic.BackgroundImage")));
+            this.btnMusic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMusic.Enabled = false;
+            this.btnMusic.FlatAppearance.BorderColor = System.Drawing.Color.YellowGreen;
+            this.btnMusic.FlatAppearance.BorderSize = 0;
+            this.btnMusic.Location = new System.Drawing.Point(696, 39);
+            this.btnMusic.Name = "btnMusic";
+            this.btnMusic.Size = new System.Drawing.Size(45, 42);
+            this.btnMusic.TabIndex = 5;
+            this.btnMusic.UseVisualStyleBackColor = false;
+            this.btnMusic.Visible = false;
+            this.btnMusic.Click += new System.EventHandler(this.btnMusic_Click);
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -135,6 +152,7 @@ namespace CarGame_CS
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(765, 713);
+            this.Controls.Add(this.btnMusic);
             this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.btnRestart);
             this.Controls.Add(this.pbFire);
@@ -168,6 +186,7 @@ namespace CarGame_CS
         private System.Windows.Forms.Button btnRestart;
         private System.Windows.Forms.ToolStrip toolStrip;
         private System.Windows.Forms.ToolStripLabel tsLblVersion;
+        private System.Windows.Forms.Button btnMusic;
     }
 }
 
